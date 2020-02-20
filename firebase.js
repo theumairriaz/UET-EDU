@@ -10,7 +10,12 @@ import "firebase/firestore";
   databaseURL: "https://fyp-practise.firebaseio.com",
   projectId: "fyp-practise",
 }
-firebase.initializeApp(firebaseConfig)
+
+if(!firebase.apps.length) { 
+  firebase.initializeApp(firebaseConfig) 
+} else { 
+ firebase.app() 
+}
 
 export default class App1 extends Component{
   constructor() {
